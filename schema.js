@@ -14,6 +14,13 @@ exports.typeDefs = gql`
         password: String!
         type: UserRole
     }
+    type Booking {
+        listing_id: ID!
+        booking_date: String!
+        booking_start: String!
+        booking_end: String!
+        username: String!
+    }
     type Listing { 
         id: ID!       
         title: String!
@@ -25,13 +32,7 @@ exports.typeDefs = gql`
         email: String!
         username: String!
     }
-    type Booking {
-        listing_id: ID!
-        booking_date: String!
-        booking_start: String!
-        booking_end: String!
-        username: String!
-    }
+    
     type Query {
         me: User!
         getBookingsByLoggedInUser: [Booking]
